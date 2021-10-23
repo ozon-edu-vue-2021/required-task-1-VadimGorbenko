@@ -175,9 +175,10 @@ const actionHandler = function(evt) {
  */
 const imageHandler = function(evt) {
   evt.preventDefault();
+  const parentLink = evt.target.closest("a");
 
-  if (evt.target.closest("a")) {
-    getPictureInfo(evt.target.closest("a").dataset.id);
+  if (parentLink) {
+    getPictureInfo(parentLink.dataset.id);
   }
 };
 
